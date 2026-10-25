@@ -10,7 +10,7 @@ if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Результат сборки лежит в build/bin/Debug/ (или Release): там calc.exe и plugins/.
-# $<CONFIG> подставляет имя конфигурации, потому что Visual Studio собирает сразу несколько.
+
 set(CALC_OUTPUT_DIR "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")
 
 # Флаги предупреждений. Для MSVC: /W4 — показывать почти все предупреждения,
@@ -19,18 +19,18 @@ function(calc_set_warnings target)
     if(MSVC)
         target_compile_options(${target} PRIVATE /W4 /utf-8 /EHsc)
     else()
-        # Для MinGW: -static вкомпилирует библиотеки внутрь, чтобы рядом с calc.exe
-        # не нужны были libstdc++-6.dll и другие.
+        # Для MinGW: -static компилирует библиотеки внутрь, рядом с calc.exe
+      
         target_compile_options(${target} PRIVATE -Wall -Wextra)
         target_link_options(${target} PRIVATE -static)
     endif()
 endfunction()
 
-# Общий заголовок plugin_api.h. Здесь только путь к нему, кода нет.
+# Общий заголовок plugin_api.h.
 add_library(calc_plugin_api INTERFACE)
 target_include_directories(calc_plugin_api INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# ---- Приложение -------------------------------------------------------------
+# 
 add_executable(calc
     src/main.cpp
     src/OperationRegistry.cpp
@@ -42,7 +42,7 @@ target_link_libraries(calc PRIVATE calc_plugin_api)
 set_target_properties(calc PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CALC_OUTPUT_DIR})
 calc_set_warnings(calc)
 
-# ---- Плагины ----------------------------------------------------------------
+# Плагины 
 add_subdirectory(plugins)
 
 # Чтобы при сборке в IDE собирались и плагины, а не только calc.
