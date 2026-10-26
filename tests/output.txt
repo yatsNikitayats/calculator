@@ -1,0 +1,35 @@
+[plugin] loaded funccos.dll -> cos
+[plugin] loaded funcdeg.dll -> ^
+[plugin] loaded funcln.dll -> ln
+[plugin] loaded funcmax.dll -> max
+[plugin] loaded funcsin.dll -> sin
+[plugin] loaded funcsqrt.dll -> sqrt
+Calculator. Type 'help' for the list of functions, 'exit' to quit.
+> 24
+> 17
+> 512
+> -4
+> -6
+> 7.5
+> 4
+> 0
+> Error: ln: argument must be > 0
+> Error: division by zero
+> Error: ^: zero cannot be raised to a negative power
+> Error: ^: negative base with fractional exponent
+> Error: result of '^' is not a finite number (overflow or undefined)
+> Error: expected ')' but got end of expression
+> Error: expected number, function or '(' but got '*' at position 5
+> Error: unknown function 'foo' (is the plugin loaded?)
+> Error: function 'sin' expects 1 argument(s), got 2
+> Error: unknown symbol '$' at position 3
+> Enter an expression, e.g. 16 + 4 * (3 - 1)
+Commands: help, exit
+Operators: * + - / ^
+Functions:
+  cos(1 arg)  <- funccos.dll
+  ln(1 arg)  <- funcln.dll
+  max(2 args)  <- funcmax.dll
+  sin(1 arg)  <- funcsin.dll
+  sqrt(1 arg)  <- funcsqrt.dll
+> 
