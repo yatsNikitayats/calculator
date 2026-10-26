@@ -1,4 +1,40 @@
+# Сборка и кеш CMake
 build/
-.vs/
 out/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+CMakeUserPresets.json
+
+# Бинарные файлы (exe, dll, библиотеки, объектные файлы, отладочные символы)
+*.exe
+*.dll
+*.lib
+*.exp
+*.a
+*.so
+*.dylib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.idb
+
+# Настройки IDE (личные, не для репозитория)
+.vs/
+.idea/
 *.user
+*.suo
+
+# Служебные файлы ОС и редакторов
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Архивы и логи
+*.zip
+*.log
