@@ -43,7 +43,7 @@ build\bin\Debug\calc.exe
 build\bin\Debug\calc.exe < tests\input.txt
 ```
 
-Вывод совпадает с `tests\expected_output.txt`.
+Вывод совпадает с `tests\output.txt`.
 
 ## Структура
 
